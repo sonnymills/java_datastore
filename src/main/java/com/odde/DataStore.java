@@ -18,13 +18,6 @@ public final class DataStore {
     public static DataStore getDataStoreInstance(){
         return getDataStore(false);
     }
-    public static DataStore getDataStoreInstance(String dataStoreName) {
-        return getNamedDataStore(dataStoreName);
-    }
-
-    private static DataStore getNamedDataStore(String dataStoreName) {
-        return
-    }
 
     private static DataStore getDataStore(Boolean resetData) {
         if (dataObjects == null || resetData) {
