@@ -31,6 +31,7 @@ public final class DataStore {
 
     public static void resetDataStore() {
         dataObjects = new HashMap<>();
+
         today = LocalDate.now();
 
     }
