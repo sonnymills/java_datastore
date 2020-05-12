@@ -2,7 +2,10 @@ package com.odde;
 
 import org.junit.jupiter.api.Test;
 
-import javax.xml.crypto.Data;
+
+import java.io.FileNotFoundException;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DataStoreBackendTest {
 
@@ -12,8 +15,10 @@ public class DataStoreBackendTest {
         DataStoreBackend dsb = new DataStoreBackend();
     }
     @Test
-    public void it_throws_an_error_if_the_flatfile_backend_cant_access_the_file_system(){
-        assertException( FilesystemNotAccessible, DataStoreBackend dsb = new DataStoreBackend("test.yml");
+    public void it_throws_an_error_if_the_flatfile_backend_cant_access_the_file_system()  {
+        assertThrows( FileNotFoundException.class, () -> {
+            DataStoreBackend dataStoreBackend = new DataStoreBackend("no_file_test.yml");
+        });
 
     }
 
